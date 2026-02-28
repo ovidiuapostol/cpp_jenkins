@@ -1,5 +1,5 @@
 #include <iostream>
-#define version 1
+#define version 2
 int main()
 {
     std::cout << "----------------------"<< std::endl;

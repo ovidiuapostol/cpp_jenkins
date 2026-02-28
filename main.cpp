@@ -5,5 +5,6 @@ int main()
     std::cout<< "Greetings form your C++ Jenkins pipeline!"<< std::endl;
     std::cout<< "this is on the with error branch"<< std::endl;
     std::cout<<"------------------------"<< std::endl;
+    john
     return 0;
 }

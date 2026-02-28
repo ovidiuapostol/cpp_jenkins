@@ -1,0 +1,27 @@
+# --- Executables ---
+# Matches your specific app name
+test_app
+my_local_app
+*.out
+*.exe
+
+# --- Objects and Libraries ---
+*.o
+*.obj
+*.a
+*.la
+*.lo
+
+# --- Build Directories ---
+# If you eventually use CMake
+build/
+bin/
+obj/
+
+# --- VS Code Files ---
+.vscode/
+*.code-workspace
+
+# --- OS Generated ---
+.DS_Store
+Thumbs.db

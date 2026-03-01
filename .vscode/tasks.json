@@ -1,0 +1,31 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Project",
+            "type": "shell",
+            "command": "make",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"]
+        },
+        {
+            "label": "Clean Project",
+            "type": "shell",
+            "command": "make ./test_app"
+        },
+        {
+            "label": "Run Project",
+            "type": "shell",
+            "command": "./test_app", 
+            "dependsOn": "Build Project",
+            "group": "test",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"           
+            },
+        }
+    ]
+}

@@ -1,0 +1,34 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+         {
+            "name": "Debug C++ Project",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/test_app", 
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Skip standard library functions",
+                    "text": "-interpreter-exec console \"skip -gfi /build/glibc-*/**/*.c\"",
+                    "ignoreFailures": true                   
+                }
+            ],
+            "preLaunchTask": "Build Project",
+            "miDebuggerPath": "/usr/bin/gdb"
+        }
+    ]
+}

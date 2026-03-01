@@ -1,6 +1,11 @@
 pipeline {
-    agent any 
-
+    agent { 
+        docker { 
+            image 'ovi-cpp-agent:java21'
+            // Alpine needs root to handle the workspace permissions correctly
+            args '-u root' 
+        }
+    }
     environment {
         // Ensures the binary name matches your Makefile
         APP_NAME = "test_app"

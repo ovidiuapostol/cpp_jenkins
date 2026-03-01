@@ -1,51 +1,9 @@
 pipeline {
-    agent { 
-        docker { 
-            image 'ovi-cpp-agent:java21'
-            // Alpine needs root to handle the workspace permissions correctly
-            args '-u root' 
-        }
-    }
-    environment {
-        // Ensures the binary name matches your Makefile
-        APP_NAME = "test_app"
-    }
-
+    agent any
     stages {
-        stage('Checkout') {
+        stage('Hello') {
             steps {
-                // Automatically pulls the branch that triggered the build
-                checkout scm
-            }
-        }
-
-        stage('Build') {
-            steps {
-                echo "🔨 Starting Build for ${APP_NAME}..."
-                // Runs the same 'make' command you use locally
-                sh 'make'
-            }
-        }
-
-        stage('Test') {
-            steps {
-                echo "🚀 Running Tests..."
-                // Executes your binary to verify it works
-                sh "./${APP_NAME}"
+                echo 'Webhook and Jenkinsfile are working!'
             }
         }
     }
-
-    post {
-        always {
-            echo "🧹 Cleaning up workspace..."
-            sh 'make clean'
-        }
-        success {
-            echo "✅ Build and Test Passed!"
-        }
-        failure {
-            echo "❌ Build Failed. Check the Console Output."
-        }
-    }
-}

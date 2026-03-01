@@ -21,6 +21,11 @@ obj/
 # --- VS Code Files ---
 .vscode/
 *.code-workspace
+# ---- Keep these files
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/settings.json
+
 
 # --- OS Generated ---
 .DS_Store
